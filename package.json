@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^15.1.2",
     "@angular/platform-browser-dynamic": "^15.1.2",
     "@angular/router": "^15.1.2",
+    "fire": "^0.55.1",
     "firebase": "^9.22.0",
     "firebase-tools": "^9.9.0 || ^10.0.0 || ^11.0.0",
     "rxjs": "^7.8.0",
