@@ -14,13 +14,13 @@ import { AuthService } from './auth.service';
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp({
-      apiKey: 'AIzaSyB_FdSlaAiMNzB6ZrgpMLYm3u-NBZFPGRY',
-      authDomain: 'angularlist-a6ac3.firebaseapp.com',
-      databaseURL: 'https://angularlist-a6ac3.firebaseio.com',
-      projectId: 'angularlist-a6ac3',
-      storageBucket: 'angularlist-a6ac3.appspot.com',
-      messagingSenderId: '75663811126',
-      appId: '1:75663811126:web:86d08cee0c83ff918e2e97',
+      apiKey: "AIzaSyBhN8CaCFElgAIE238E_LCeWtGyLyQxMSU",
+    authDomain: "angular-project-3558c.firebaseapp.com",
+    projectId: "angular-project-3558c",
+    storageBucket: "angular-project-3558c.appspot.com",
+    messagingSenderId: "240526118246",
+    appId: "1:240526118246:web:6c4b0e1547c5917b940ca7",
+    measurementId: "G-6HS4Z489ME"
     }),
     AngularFireAuthModule,
     AngularFireDatabaseModule
