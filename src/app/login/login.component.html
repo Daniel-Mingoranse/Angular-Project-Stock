@@ -1,0 +1,79 @@
+<main>
+  <div *ngIf="!auth.user">
+    <div class="form-signin w-100 m-auto">
+      <form>
+        <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
+
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+            [(ngModel)]="email"
+            name="email"
+          />
+
+          <label for="floatingInput">E-mail:</label>
+        </div>
+
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+            name="password"
+            [(ngModel)]="password"
+          />
+
+          <label for="floatingPassword">Senha:</label>
+        </div>
+
+        <button
+          class="w-100 btn btn-lg btn-primary"
+          type="submit"
+          (click)="auth.emailSignin(this.email, this.password)"
+        >
+          Entrar
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="auth.error" style="color: red">
+    {{ auth.error }}
+  </div>
+
+  <div *ngIf="auth.user" class="area-restrita">
+    Logged as <b>{{ auth.user.email }}</b> |
+    <button (click)="auth.signOut()">Exit</button>
+    <hr />
+
+    <h2>Firebase list</h2>
+    <hr />
+    <div>Name:</div>
+    <div><input [(ngModel)]="formNewName" /></div>
+    <div>Age:</div>
+    <div><input type="number" [(ngModel)]="formNewAge" /></div>
+    <br />
+    <button (click)="addItem()">Adicionar</button>
+    <hr />
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Commmand</th>
+      </tr>
+      <tr *ngFor="let item of list | async">
+        <td [title]="['chave: ' + item.key]">{{ item.name }}</td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.email }}</td>
+        <td>
+          <button (click)="deleteItem(item.key)">Remove</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</main>

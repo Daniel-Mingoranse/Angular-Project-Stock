@@ -7,6 +7,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AuthService } from './auth.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -14,19 +15,19 @@ import { AuthService } from './auth.service';
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp({
-      apiKey: "AIzaSyBhN8CaCFElgAIE238E_LCeWtGyLyQxMSU",
-    authDomain: "angular-project-3558c.firebaseapp.com",
-    projectId: "angular-project-3558c",
-    storageBucket: "angular-project-3558c.appspot.com",
-    messagingSenderId: "240526118246",
-    appId: "1:240526118246:web:6c4b0e1547c5917b940ca7",
-    measurementId: "G-6HS4Z489ME"
+      apiKey: 'AIzaSyBhN8CaCFElgAIE238E_LCeWtGyLyQxMSU',
+      authDomain: 'angular-project-3558c.firebaseapp.com',
+      projectId: 'angular-project-3558c',
+      storageBucket: 'angular-project-3558c.appspot.com',
+      messagingSenderId: '240526118246',
+      appId: '1:240526118246:web:6c4b0e1547c5917b940ca7',
+      measurementId: 'G-6HS4Z489ME',
     }),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
   ],
-  declarations: [RootComponent],
+  declarations: [RootComponent, LoginComponent],
   bootstrap: [RootComponent],
-  providers: [AuthService]
+  providers: [AuthService],
 })
 export class AppModule {}
