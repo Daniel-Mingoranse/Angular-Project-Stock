@@ -46,29 +46,39 @@
   </div>
 
   <div *ngIf="auth.user" class="area-restrita">
-    Logged as <b>{{ auth.user.email }}</b> |
+    Logged as <b>{{ auth.user.email }} (admin)</b> |
     <button (click)="auth.signOut()">Exit</button>
     <hr />
 
-    <h2>Firebase list</h2>
+    <h2>Cadastro de Funcionário</h2>
     <hr />
-    <div>Name:</div>
+    <div>Nome:</div>
     <div><input [(ngModel)]="formNewName" /></div>
-    <div>Age:</div>
-    <div><input type="number" [(ngModel)]="formNewAge" /></div>
+    <div>CPF:</div>
+    <div><input type="number" [(ngModel)]="formNewCpf" /></div>
+    <div>E-mail:</div>
+    <div><input type="email" [(ngModel)]="formNewEmail" /></div>
     <br />
-    <button (click)="addItem()">Adicionar</button>
+    <button (click)="cadastrar()">Cadastrar</button>
+    <button (click)="visualizar()">Visualizar Funcionários</button>
+    <div class="popup" [ngClass]="{ open: isPopupOpen }">
+      <div class="popup-content">
+        <h1>Cadastro Realizado!</h1>
+        <p>Funcionário cadastrado!</p>
+        <button (click)="fecharPopup()">Ok</button>
+      </div>
+    </div>
     <hr />
     <table border="1">
       <tr>
-        <th>Name</th>
-        <th>Age</th>
+        <th>Nome</th>
+        <th>CPF</th>
         <th>Email</th>
         <th>Commmand</th>
       </tr>
       <tr *ngFor="let item of list | async">
         <td [title]="['chave: ' + item.key]">{{ item.name }}</td>
-        <td>{{ item.age }}</td>
+        <td>{{ item.cpf }}</td>
         <td>{{ item.email }}</td>
         <td>
           <button (click)="deleteItem(item.key)">Remove</button>
